@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onresize = function (){ //wyłapywanie zdarzenia
+            console.log(window.innerWidth); //wpisywanie w consoli (zbadaj na stronie) szerokości okna przegladarki
+        };
+        //inne funkcje:
+        //window.open("http://wsb.pl", "blank"); //otwiera w nowym oknie stronę wsb
+
+        //console.log(window.location.href);
+        //window.location.assign ("http://wp.pl"); //przekierowuje na nowa stronę
+
+        //window.navigator.geolocation //funkcja do pobierania lokalizacji
+        
+        console.log(navigator.appVersion);
+        console.log(navigator.userAgent);
+        console.log(navigator.language);
+        console.log(/Mobi|Android/i.test(navigator.userAgent)); //wypisuje czy urzadzenie jest mobilne
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

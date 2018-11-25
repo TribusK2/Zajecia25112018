@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <style>
+    .highlight-green{
+        color: green;font-weight: bold;
+    }
+    </style>
+    <script>
+        window.onload = function(){
+            var paragraphs = document.querySelectorAll("#dTodos p"); //pobieramy z body tylko paragrafy z id dTodos
+            for(var i = 0; i < paragraphs.length; i++) {
+                if(paragraphs[i].innerHTML == "Mam pojęcie"){
+                    paragraphs[i].classList.add("highlight-green");
+                }
+            }; 
+        };    
+    </script>
+</head>
+
+<body>
+    <div>Add new todo <input id="tToDo" type="text" /></div>
+    <div>Search todo <input id="tSearchTodos" type="text" /></div>
+    <div id="dTodos">
+        <p id="pResult">Nie mam pojęcia</p>
+        <p id="pResult">Nie mam pojęcia</p>
+        <p id="pResult">Nie mam pojęcia</p>
+        <p id="pResult">Mam pojęcie</p>
+        <p id="pResult">Nie mam pojęcia</p>
+    </div>
+    <div id="eTodos">
+        <p id="pResult">Nie mam pojęcia</p>
+        <p id="pResult">Nie mam pojęcia</p>
+        <p id="pResult">Nie mam pojęcia</p>
+        <p id="pResult">Mam pojęcie</p>
+        <p id="pResult">Nie mam pojęcia</p>
+    </div>
+</body>
+</html>

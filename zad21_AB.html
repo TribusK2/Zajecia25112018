@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <style>
+    .highlight{
+        border: 2px solid red;
+    }
+        
+    </style>
+    <script>
+        window.onload = function(){
+           var tNewTodo = document.getElementById("tTodo");
+           var tSearchTodos = document.getElementById("tSearchTodos");
+           var olTodos = document.getElementById("dTodos");
+           tNewTodo.onkeyup = function(event){ //zamiast event może byc dowolna nazwa
+                if(event.keyCode == 13){ //keyCode jest to kod konkretnego klawisza, w tym przypadku "Enter"
+                alert(tNewTodo.value);
+
+                }
+            }
+            tNewTodo.onmouseover = function(light){
+                if(tNewTodo.value){
+                    tNewTodo.value
+                }else{
+                    tNewTodo.classList.add("highlight");
+                }
+            tNewTodo.onmouseout = function(unlight){
+                    tNewTodo.classList.remove("highlight");
+                }
+                
+            }
+        };    
+    </script>
+</head>
+
+<body>
+    <div>Add new todo <input id="tTodo" type="text" /></div>
+    <div>Search todo <input id="tSearchTodos" type="text" /></div>
+    <ol id="dTodos">
+      
+    </ol>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <style>
+    
+    </style>
+    <script>
+        window.onload = function(){
+           var tNewTodo = document.getElementById("tTodo");
+           var tSearchTodos = document.getElementById("tSearchTodos");
+           var olTodos = document.getElementById("olTodos");
+           tNewTodo.onkeyup = function(event){ //zamiast event może byc dowolna nazwa
+                if(event.keyCode == 13){ //keyCode jest to kod konkretnego klawisza, w tym przypadku "Enter"
+                var newTodo = tNewTodo.value; //tekst
+
+                var liNewTodo = document.createElement("li"); //tworzymy li
+                var textNodeNewTodo = document.createTextNode(newTodo); //tekst jak newTodo
+                liNewTodo.appendChild(textNodeNewTodo);
+
+                var btnDeleteTodo = document.createElement("button"); //tworzymy button
+                var textNodeDeleteTodo = document.createTextNode("X"); //tworzymy tekst w button
+                btnDeleteTodo.appendChild(textNodeDeleteTodo);
+
+                //btnDeleteTodo.setAttribute("onclick", "alert('" + newTodo + "')");
+                btnDeleteTodo.onclick = function(event){
+                    var todos = document.getElementById("olTodos");
+                    todos.removeChild(event.target.parentNode); 
+
+                    }
+                }
+
+                liNewTodo.appendChild(btnDeleteTodo); //dodanie przycisku na końcu
+                olTodos.appendChild(liNewTodo); //dodanie do listy numerowej
+                 
+            }
+        };    
+        function deleteTodo(liTodo){ //przekazanie przez referencje (nie kopia)
+            document.getElementById("olTodos").removeChild(liTodo);
+        }
+    </script>
+</head>
+
+<body>
+    <div>Add new todo <input id="tTodo" type="text" /></div>
+    <div>Search todo <input id="tSearchTodos" type="text" /></div>
+    <ol id="olTodos">
+      
+    </ol>
+</body>
+</html>
